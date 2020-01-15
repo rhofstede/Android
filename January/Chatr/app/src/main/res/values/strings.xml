@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Chatr</string>
+    <string name="main_title_text">Chatr</string>
+    <string name="edit_text_hint">Enter Chatr here</string>
+    <string name="button_send_text">Post</string>
+    <string name="button_view_text">View</string>
+    <string name="view_title_text">Last 30 Chatrs</string>
+</resources>
