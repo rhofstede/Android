@@ -8,17 +8,33 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/color_view_title"
-        android:text="@string/view_title_text"
         android:layout_gravity="center_horizontal"
-        android:textSize="24sp"/>
+        android:text="@string/view_title_text"
+        android:textColor="@color/color_view_title"
+        android:textSize="24sp" />
 
-    <TextView
-        android:layout_width="match_parent"
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/text_view_chatr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@color/color_text_view_bg"
+            android:textColor="@color/color_text_view_text" />
+    </ScrollView>
+
+
+    <Button
+        android:id="@+id/button_back"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:background="@color/color_text_view_bg"
-        android:textColor="@color/color_text_view_text"
-        android:id="@+id/text_view_chatr"/>
-
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="5dp"
+        android:text="@string/button_back_text"
+        android:textAllCaps="false"
+        android:textSize="16sp" />
 </LinearLayout>

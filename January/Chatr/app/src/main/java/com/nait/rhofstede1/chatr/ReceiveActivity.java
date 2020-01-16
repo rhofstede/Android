@@ -2,9 +2,14 @@ package com.nait.rhofstede1.chatr;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.view.View;
+import android.view.View.OnClickListener;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -15,8 +20,8 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URI;
 
-public class ReceiveActivity extends AppCompatActivity {
-
+public class ReceiveActivity extends AppCompatActivity implements OnClickListener
+{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +29,11 @@ public class ReceiveActivity extends AppCompatActivity {
 
         //get data from database
         getFromServer();
+
+        //create button
+        Button backButton = findViewById(R.id.button_back);
+        //listen for button
+        backButton.setOnClickListener(this);
     }
 
     private void getFromServer()
@@ -57,5 +67,12 @@ public class ReceiveActivity extends AppCompatActivity {
         {
             Toast.makeText(this, "Error: " + e, Toast.LENGTH_LONG).show();
         }
+    }
+
+    @Override
+    public void onClick(View view)
+    {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 }
