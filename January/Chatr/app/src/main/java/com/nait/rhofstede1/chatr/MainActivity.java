@@ -1,11 +1,15 @@
 package com.nait.rhofstede1.chatr;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -44,6 +48,42 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         //listen for the buttons
         sendButton.setOnClickListener(this);
         viewButton.setOnClickListener(this);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
+        //draw(inflate) menu
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main_menu, menu);
+
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch(item.getItemId())
+        {
+            case R.id.menu_item_view_text_view:
+            {
+                //go to the text view class
+                Intent intent = new Intent(this, ReceiveActivity.class);
+                startActivity(intent);
+                break;
+            }
+            case R.id.menu_item_view_system_list:
+            {
+                //go to the list view class
+                Intent intent = new Intent(this, SystemListActivity.class);
+                startActivity(intent);
+                break;
+            }
+            default:
+            {
+                break;
+            }
+        }
+        return true;
     }
 
     @Override

@@ -44,6 +44,7 @@ public class ReceiveActivity extends AppCompatActivity implements OnClickListene
         try
         {
             //import gradle scripts, build gradle (module app), and add useLibrary 'org.apache.http.legacy'
+            //this is deprecated code. use the proper libraries when building
             HttpClient client = new DefaultHttpClient();
             HttpGet request = new HttpGet();
 
@@ -72,6 +73,7 @@ public class ReceiveActivity extends AppCompatActivity implements OnClickListene
     @Override
     public void onClick(View view)
     {
+        //go back to the main class
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
