@@ -73,8 +73,15 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
             }
             case R.id.menu_item_view_system_list:
             {
-                //go to the list view class
+                //go to the system list view class
                 Intent intent = new Intent(this, SystemListActivity.class);
+                startActivity(intent);
+                break;
+            }
+            case R.id.menu_item_view_custom_list:
+            {
+                //go to the custom list view class
+                Intent intent = new Intent(this, CustomListActivity.class);
                 startActivity(intent);
                 break;
             }

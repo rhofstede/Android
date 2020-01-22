@@ -6,4 +6,5 @@
     <string name="button_view_text">View</string>
     <string name="button_back_text">Back</string>
     <string name="view_title_text">Last 30 Chatrs</string>
+    <string name="list_view_empty_text">No chatr available</string>
 </resources>

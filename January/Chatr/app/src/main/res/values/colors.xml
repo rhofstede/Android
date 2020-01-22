@@ -10,4 +10,5 @@
     <color name="color_view_bg">#6EDFE9</color>
     <color name="color_text_view_bg">#396C74</color>
     <color name="color_text_view_text">#FFF</color>
+    <color name="colour_divider">#FFFF00</color>
 </resources>
