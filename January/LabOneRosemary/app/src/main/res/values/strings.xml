@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">LabOneRosemary</string>
+    <string name="main_title_text">Oscar Review</string>
+    <string name="post_review_hint">Enter review here</string>
+    <string name="button_send_review">Post Review</string>
+    <string name="button_view_review">View Reviews</string>
+    <string name="button_back">Back</string>
+    <string name="list_view_empty_text">No reviews found</string>
+</resources>
