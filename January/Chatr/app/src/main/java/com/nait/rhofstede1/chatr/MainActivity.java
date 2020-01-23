@@ -4,9 +4,12 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -26,13 +29,24 @@ import org.apache.http.message.BasicNameValuePair;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements OnClickListener {
-
+public class MainActivity extends AppCompatActivity implements OnClickListener, SharedPreferences.OnSharedPreferenceChangeListener
+{
+    //create user preferences
+    SharedPreferences settings;
+    //create view for editing purposes
+    View mainView;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //instanciate main view
+        mainView = findViewById(R.id.linear_layout_main);
+        //set user preferences for the application
+        settings = PreferenceManager.getDefaultSharedPreferences(this);
+        String bgColor = settings.getString("preference_main_bg_color","#FFFF00");
+        mainView.setBackgroundColor(Color.parseColor(bgColor));
 
         //hack to allow operations on the main thread.
         if (Build.VERSION.SDK_INT > 9)
@@ -48,6 +62,9 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         //listen for the buttons
         sendButton.setOnClickListener(this);
         viewButton.setOnClickListener(this);
+
+        //listen for preference changes
+        settings.registerOnSharedPreferenceChangeListener(this);
     }
 
     @Override
@@ -82,6 +99,13 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
             {
                 //go to the custom list view class
                 Intent intent = new Intent(this, CustomListActivity.class);
+                startActivity(intent);
+                break;
+            }
+            case R.id.menu_item_settings:
+            {
+                //go to the settings page
+                Intent intent = new Intent(this, SettingsActivity.class);
                 startActivity(intent);
                 break;
             }
@@ -128,6 +152,8 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
 
     private void postToServer(String chatr)
     {
+        //get username from settings
+        String username = settings.getString("preference_user_name","unknownuser");
         try
         {
             //create variables
@@ -136,7 +162,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
             List<NameValuePair> formParameters = new ArrayList<NameValuePair>();
             //pass in data
             formParameters.add(new BasicNameValuePair("DATA", chatr));
-            formParameters.add(new BasicNameValuePair("LOGIN_NAME", "bubble_elevator"));
+            formParameters.add(new BasicNameValuePair("LOGIN_NAME", username));
             //encode for internet
             UrlEncodedFormEntity formEntity = new UrlEncodedFormEntity(formParameters);
             //put contents into database
@@ -147,5 +173,12 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         {
             Toast.makeText(this, "Error: " + e, Toast.LENGTH_LONG).show();
         }
+    }
+
+    @Override
+    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key)
+    {
+        String bgColor = settings.getString("preference_main_bg_color","#FFFF00");
+        mainView.setBackgroundColor(Color.parseColor(bgColor));
     }
 }

@@ -7,4 +7,10 @@
     <string name="button_back_text">Back</string>
     <string name="view_title_text">Last 30 Chatrs</string>
     <string name="list_view_empty_text">No chatr available</string>
+    <string name="preference_username_title">Username</string>
+    <string name="preference_username_summary">Set or change username</string>
+    <string name="preference_user_password">Password</string>
+    <string name="preference_user_password_summary">Set or change password</string>
+    <string name="preference_main_bg_color_title">Main background colour</string>
+    <string name="preference_main_bg_color_summary">Modify background colour</string>
 </resources>
