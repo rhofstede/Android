@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Chatr</string>
+    <string name="main_title_text">Begin</string>
+    <string name="edit_text_hint">Typ hier</string>
+    <string name="button_view_text">Bekijk berichten</string>
+    <string name="button_back_text">Terug</string>
+</resources>

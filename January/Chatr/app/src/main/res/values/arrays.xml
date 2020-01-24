@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="color_names">
+        <item name="red">Red</item>
+        <item name="yellow">Yellow</item>
+        <item name="blue">Blue</item>
+        <item name="green">Green</item>
+        <item name="purple">Purple</item>
+        <item name="orange">Orange</item>
+    </string-array>
+
+    <string-array name="colour_values">
+        <item name="red">#990000</item>
+        <item name="yellow">#FFF633</item>
+        <item name="blue">#336BFF</item>
+        <item name="green">#14Ca40</item>
+        <item name="purple">#8214CA</item>
+        <item name="orange">#F37D21</item>
+    </string-array>
+
+</resources>

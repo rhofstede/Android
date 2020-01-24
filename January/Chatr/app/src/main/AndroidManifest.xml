@@ -13,6 +13,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".SettingsActivity"></activity>
         <activity android:name=".CustomListActivity" />
+        <activity android:name=".CustomListOptionActivity" />
         <activity android:name=".SystemListActivity" />
         <activity android:name=".ReceiveActivity" />
         <activity android:name=".MainActivity">
