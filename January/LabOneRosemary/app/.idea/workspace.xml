@@ -151,7 +151,7 @@
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="C:/Studentscripts" />
     <property name="device.picker.selection" value="Nexus_5X_API_25" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Chatr/app" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
