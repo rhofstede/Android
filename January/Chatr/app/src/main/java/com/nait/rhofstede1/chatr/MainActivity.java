@@ -41,11 +41,11 @@ public class MainActivity extends AppCompatActivity implements OnClickListener, 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //instanciate main view
+        //instantiate main view
         mainView = findViewById(R.id.linear_layout_main);
         //set user preferences for the application
         settings = PreferenceManager.getDefaultSharedPreferences(this);
-        String bgColor = settings.getString("preference_main_bg_color","#FFFF00");
+        String bgColor = settings.getString(getResources().getString(R.string.preference_key_main_bg_color),"#FFFFF0");
         mainView.setBackgroundColor(Color.parseColor(bgColor));
 
         //hack to allow operations on the main thread.
@@ -159,8 +159,10 @@ public class MainActivity extends AppCompatActivity implements OnClickListener, 
 
     private void postToServer(String chatr)
     {
+        //get username
+        String key = getResources().getString(R.string.preference_key_username);
         //get username from settings
-        String username = settings.getString("preference_user_name","unknownuser");
+        String username = settings.getString(key,"unknown_user");
         try
         {
             //create variables
@@ -185,7 +187,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener, 
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key)
     {
-        String bgColor = settings.getString("preference_main_bg_color","#FFFF00");
+        String bgColor = settings.getString(getResources().getString(R.string.preference_key_main_bg_color),"#FFFF00");
         mainView.setBackgroundColor(Color.parseColor(bgColor));
     }
 }

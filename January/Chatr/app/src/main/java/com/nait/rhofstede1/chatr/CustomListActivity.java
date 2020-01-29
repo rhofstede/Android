@@ -21,6 +21,11 @@ import java.util.HashMap;
 
 public class CustomListActivity extends ListActivity
 {
+    //define terms for the array passing information between app and database
+    public static final String SENDER = "sender";
+    public static final String TEXT = "text";
+    public static final String THE_DATE = "theDate";
+
     ArrayList<HashMap<String, String>> chatrArray = new ArrayList<HashMap<String, String>>();
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -33,7 +38,7 @@ public class CustomListActivity extends ListActivity
     private void displayChatr()
     {
         //create arrays with the keys and array with values
-        String[] keys = new String[]{"sender","text", "theDate"};
+        String[] keys = new String[]{SENDER, TEXT, THE_DATE};
         int[] ids = new int[]{R.id.text_view_custom_row_sender, R.id.text_view_custom_row_message, R.id.text_view_custom_row_date};
         //create adapter
         SimpleAdapter adapter = new SimpleAdapter(this, chatrArray, R.layout.custom_row, keys, ids);
@@ -65,13 +70,13 @@ public class CustomListActivity extends ListActivity
             {
                 //the strings will come in the order: sender, text, date, sender, text, date
                 HashMap<String, String> tempMap = new HashMap<String, String>();
-                tempMap.put("sender",line);
+                tempMap.put(SENDER,line);
 
                 line = in.readLine();
-                tempMap.put("text", line);
+                tempMap.put(TEXT, line);
 
                 line = in.readLine();
-                tempMap.put("theDate", line);
+                tempMap.put(THE_DATE, line);
 
                 chatrArray.add(tempMap);
             }
