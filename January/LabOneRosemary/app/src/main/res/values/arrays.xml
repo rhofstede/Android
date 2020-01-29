@@ -2,11 +2,21 @@
 <resources>
 
     <string-array name="color_names">
-        <item></item>
+        <item name="red">Red</item>
+        <item name="yellow">Yellow</item>
+        <item name="blue">Blue</item>
+        <item name="green">Green</item>
+        <item name="purple">Purple</item>
+        <item name="orange">Orange</item>
     </string-array>
 
-    <string-array name="color_values">
-
+    <string-array name="colour_values">
+        <item name="red">#801500</item>
+        <item name="yellow">#ffe135</item>
+        <item name="blue">#00308f</item>
+        <item name="green">#006633</item>
+        <item name="purple">#6a0080</item>
+        <item name="orange">#cc6600</item>
     </string-array>
 
 </resources>

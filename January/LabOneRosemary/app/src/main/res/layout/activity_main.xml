@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/linear_layout_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -14,12 +15,53 @@
         android:textSize="28sp"/>
 
     <EditText
+        android:id="@+id/edit_text_nominee"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="10dp"
+        android:hint="@string/post_nominee_hint"
+        android:background="@color/color_edit_text_bg"
+        android:inputType="text"/>
+
+    <EditText
         android:id="@+id/edit_text_message"
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:layout_margin="10dp"
         android:hint="@string/post_review_hint"
-        android:background="@color/color_edit_text_bg" />
+        android:background="@color/color_edit_text_bg"
+        android:inputType="text"/>
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/radio_group_categories">
+        <RadioButton
+            android:id="@+id/radio_picture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/radio_button_picture_title"/>
+        <RadioButton
+            android:id="@+id/radio_actor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/radio_button_actor_title"/>
+        <RadioButton
+            android:id="@+id/radio_actress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/radio_button_actress_title"/>
+        <RadioButton
+            android:id="@+id/radio_editing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/radio_button_editing_title"/>
+        <RadioButton
+            android:id="@+id/radio_effects"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/radio_button_effects_title"/>
+    </RadioGroup>
 
     <Button
         android:id="@+id/button_send"
