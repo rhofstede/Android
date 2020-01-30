@@ -116,6 +116,14 @@ public class MainActivity extends AppCompatActivity implements OnClickListener, 
                 startActivity(intent);
                 break;
             }
+
+            case R.id.menu_item_layout_options:
+            {
+                //go to the settings page
+                Intent intent = new Intent(this, LayoutActivity.class);
+                startActivity(intent);
+                break;
+            }
             default:
             {
                 break;

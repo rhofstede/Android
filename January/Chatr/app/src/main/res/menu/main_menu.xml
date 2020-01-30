@@ -20,4 +20,8 @@
         android:id="@+id/menu_item_settings"
         android:title="Settings"/>
 
+    <item
+        android:id="@+id/menu_item_layout_options"
+        android:title="Layout"/>
+
 </menu>
