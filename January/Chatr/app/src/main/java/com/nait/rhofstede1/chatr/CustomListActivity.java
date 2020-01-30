@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ListActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -21,6 +22,9 @@ import java.util.HashMap;
 
 public class CustomListActivity extends ListActivity
 {
+    //for logging purposes
+    public static String TAG = "CustomListActivity";
+
     //define terms for the array passing information between app and database
     public static final String SENDER = "sender";
     public static final String TEXT = "text";
@@ -66,9 +70,11 @@ public class CustomListActivity extends ListActivity
             in = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
 
             String line = "";
+            Log.d(TAG, "before while loop");
             while((line = in.readLine()) != null)
             {
                 //the strings will come in the order: sender, text, date, sender, text, date
+                //Log.d(TAG, "**" + line + "**");
                 HashMap<String, String> tempMap = new HashMap<String, String>();
                 tempMap.put(SENDER,line);
 
@@ -80,6 +86,7 @@ public class CustomListActivity extends ListActivity
 
                 chatrArray.add(tempMap);
             }
+            Log.d(TAG, "after while loop");
             in.close();
 
         }
