@@ -1,14 +1,14 @@
-package com.nait.rhofstede1.chatr;
-
-import android.os.Bundle;
+package com.nait.rhofstede1.testpurposes;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class LayoutActivity extends AppCompatActivity {
+import android.os.Bundle;
+
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_layout);
+        setContentView(R.layout.activity_main);
     }
 }
