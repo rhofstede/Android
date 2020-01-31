@@ -1,13 +1,18 @@
 package com.nait.rhofstede1.labonerosemary;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.preference.PreferenceManager;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -157,5 +162,39 @@ public class MainActivity extends AppCompatActivity implements OnClickListener, 
     {
         String bgColor = settings.getString(getResources().getString(R.string.preference_key_main_bg_color),"#74593D");
         mainView.setBackgroundColor(Color.parseColor(bgColor));
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item)
+    {
+        switch (item.getItemId())
+        {
+            case R.id.menu_item_preferences:
+            {
+                //go to preferences
+
+                break;
+            }
+            case R.id.menu_item_view_review:
+            {
+                //go to reviews
+                Intent intent = new Intent(this, ViewActivity.class);
+                startActivity(intent);
+                break;
+            }
+            default:
+            {
+                break;
+            }
+        }
+        return true;
     }
 }
