@@ -13,8 +13,8 @@
     <string name="preference_user_password_summary">Set or change password</string>
     <string name="preference_main_bg_color_title">Main background colour</string>
     <string name="preference_main_bg_color_summary">Modify background colour</string>
-
     <string name="preference_key_username">username</string>
     <string name="preference_key_password">password</string>
     <string name="preference_key_main_bg_color">main_bg_color</string>
+    <string name="color_change_title_text">Change Background Color: </string>
 </resources>

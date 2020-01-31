@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/linear_layout_color_change"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/color_change_title_text"
+        android:textSize="24sp"
+        android:layout_gravity="center_horizontal"/>
+    <Spinner
+        android:id="@+id/color_spinner"
+        android:layout_width="125dp"
+        android:layout_height="50dp"
+        android:entries="@array/color_names" />
+
+</LinearLayout>

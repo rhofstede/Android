@@ -70,7 +70,7 @@ public class CustomListActivity extends ListActivity
             in = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
 
             String line = "";
-            Log.d(TAG, "before while loop");
+            //Log.d(TAG, "before while loop");
             while((line = in.readLine()) != null)
             {
                 //the strings will come in the order: sender, text, date, sender, text, date
@@ -86,7 +86,7 @@ public class CustomListActivity extends ListActivity
 
                 chatrArray.add(tempMap);
             }
-            Log.d(TAG, "after while loop");
+            //Log.d(TAG, "after while loop");
             in.close();
 
         }

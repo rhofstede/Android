@@ -116,11 +116,17 @@ public class MainActivity extends AppCompatActivity implements OnClickListener, 
                 startActivity(intent);
                 break;
             }
-
             case R.id.menu_item_layout_options:
             {
-                //go to the settings page
+                //go to the layout page
                 Intent intent = new Intent(this, LayoutActivity.class);
+                startActivity(intent);
+                break;
+            }
+            case R.id.menu_item_color_spinner:
+            {
+                //go to the color spinner page
+                Intent intent = new Intent(this, ColorSpinnerActivity.class);
                 startActivity(intent);
                 break;
             }

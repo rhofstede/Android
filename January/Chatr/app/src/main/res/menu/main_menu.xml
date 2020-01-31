@@ -24,4 +24,8 @@
         android:id="@+id/menu_item_layout_options"
         android:title="Layout"/>
 
+    <item
+        android:id="@+id/menu_item_color_spinner"
+        android:title="Change Background Color"/>
+
 </menu>
