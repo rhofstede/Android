@@ -39,10 +39,11 @@ public class MainActivity extends AppCompatActivity implements OnClickListener, 
     View mainView;
 
     //resources not needed in xml - push to database
-    public static final String USERNAME = "username";
+    public static final String REVIEWER = "username";
     public static final String REVIEW = "review";
     public static final String CATEGORY = "category";
     public static final String NOMINEE = "nominee";
+    public static final String PASSWORD = "oscar275";
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -144,7 +145,8 @@ public class MainActivity extends AppCompatActivity implements OnClickListener, 
             formParameters.add(new BasicNameValuePair(NOMINEE,nominee));
             formParameters.add(new BasicNameValuePair(REVIEW,review));
             formParameters.add(new BasicNameValuePair(CATEGORY,category));
-            formParameters.add(new BasicNameValuePair(USERNAME, username));
+            formParameters.add(new BasicNameValuePair(REVIEWER, username));
+            formParameters.add(new BasicNameValuePair(PASSWORD, "oscar275"));
             //encode for internet
             UrlEncodedFormEntity formEntity = new UrlEncodedFormEntity(formParameters);
             //send to database
