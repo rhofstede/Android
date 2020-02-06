@@ -40,27 +40,32 @@
             android:id="@+id/radio_picture"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/radio_button_picture_title"/>
+            android:text="@string/radio_button_picture_title"
+            android:tag="film"/>
         <RadioButton
             android:id="@+id/radio_actor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/radio_button_actor_title"/>
+            android:text="@string/radio_button_actor_title"
+            android:tag="actor"/>
         <RadioButton
             android:id="@+id/radio_actress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/radio_button_actress_title"/>
+            android:text="@string/radio_button_actress_title"
+            android:tag="actress"/>
         <RadioButton
             android:id="@+id/radio_editing"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/radio_button_editing_title"/>
+            android:text="@string/radio_button_editing_title"
+            android:tag="editing"/>
         <RadioButton
             android:id="@+id/radio_effects"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/radio_button_effects_title"/>
+            android:text="@string/radio_button_effects_title"
+            android:tag="effects"/>
     </RadioGroup>
 
     <Button

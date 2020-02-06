@@ -39,11 +39,11 @@ public class MainActivity extends AppCompatActivity implements OnClickListener, 
     View mainView;
 
     //resources not needed in xml - push to database
-    public static final String REVIEWER = "username";
-    public static final String REVIEW = "review";
-    public static final String CATEGORY = "category";
-    public static final String NOMINEE = "nominee";
-    public static final String PASSWORD = "oscar275";
+    public static final String REVIEWER = "REVIEWER";
+    public static final String REVIEW = "REVIEW";
+    public static final String CATEGORY = "CATEGORY";
+    public static final String NOMINEE = "NOMINEE";
+    public static final String PASSWORD = "PASSWORD";
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -90,40 +90,10 @@ public class MainActivity extends AppCompatActivity implements OnClickListener, 
         String review = textBoxReview.getText().toString();
 
         //get category
-        int selectedCategoryID = radioCategoryGroup.getCheckedRadioButtonId();
-        String category = "";
-        switch (selectedCategoryID)
-        {
-            case R.id.radio_picture:
-            {
-                category = "film";
-                break;
-            }
-            case R.id.radio_actor:
-            {
-                category = "actor";
-                break;
-            }
-            case R.id.radio_actress:
-            {
-                category = "actress";
-                break;
-            }
-            case R.id.radio_editing:
-            {
-                category = "editing";
-                break;
-            }
-            case R.id.radio_effects:
-            {
-                category = "effects";
-                break;
-            }
-            default:
-            {
-                break;
-            }
-        }
+        RadioGroup group = (RadioGroup)findViewById(R.id.radio_group_categories); //get the radio group
+        int buttonID = group.getCheckedRadioButtonId(); //get the button id
+        RadioButton button = (RadioButton)findViewById(buttonID); //get the correct button
+        String category = (String) button.getTag(); //get the tag from that button
 
         postReview(nominee, review, category);
         textBoxNominee.setText("");

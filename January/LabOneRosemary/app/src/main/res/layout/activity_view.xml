@@ -20,5 +20,10 @@
     <ListView
         android:id="@+id/list_view_review_content"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:dividerHeight="1dp"
+        android:divider="@color/colour_main_bg"
+        android:background="@color/color_edit_text_bg"
+        android:layout_below="@id/text_view_review_title"/>
 </RelativeLayout>
