@@ -24,6 +24,7 @@ import java.util.HashMap;
 
 public class ViewActivity extends AppCompatActivity
 {
+    //variables for use
     ArrayList<HashMap<String,String>> reviewArray = new ArrayList<HashMap<String,String>>();
     String category = "film";
     @Override
@@ -37,10 +38,10 @@ public class ViewActivity extends AppCompatActivity
         categorySpinner.setOnItemSelectedListener(new MySpinnerListener());
 
         //display according to category
-        displayReviews();
+        //displayReviews(category);
     }
 
-    private void displayReviews()
+    private void displayReviews(String category)
     {
         //create arrays for the keys and values
         String[] keys = new String[]{"nominee","reviewer","review"};
@@ -50,7 +51,7 @@ public class ViewActivity extends AppCompatActivity
         SimpleAdapter adapter = new SimpleAdapter(this, reviewArray, R.layout.view_row, keys, ids);
 
         //get info into arrays
-        populateArrays();
+        populateArrays(category);
 
         //create listview
         ListView listview = findViewById(R.id.list_view_review_content);
@@ -59,7 +60,7 @@ public class ViewActivity extends AppCompatActivity
         listview.setAdapter(adapter);
     }
 
-    private void populateArrays()
+    private void populateArrays(String newCategory)
     {
         BufferedReader in = null;
 
@@ -70,7 +71,8 @@ public class ViewActivity extends AppCompatActivity
             HttpClient client = new DefaultHttpClient();
             HttpGet request = new HttpGet();
 
-            request.setURI(new URI("http://www.youcode.ca/Lab01Servlet?CATEGORY=" + category)); //universal resource identifier
+            //url + category gets only reviews for that category
+            request.setURI(new URI("http://www.youcode.ca/Lab01Servlet?CATEGORY=" + newCategory)); //universal resource identifier
             //response holds all the stuff
             HttpResponse response = client.execute(request);
             //parse stuff into the buffered reader
@@ -83,15 +85,19 @@ public class ViewActivity extends AppCompatActivity
             while((line = in.readLine()) != null)
             {
                 //the strings will come in the order: date, reviewer, category, nominee, review
-                //i only need reviewer, nominee, and review in the array. Category will determine if it will be displayed
+                //i only need reviewer, nominee, and review in the array
                 HashMap<String, String> tempMap = new HashMap<String, String>();
                 date = line;
+
                 line = in.readLine();
                 tempMap.put("reviewer", line);
+
                 line = in.readLine();
-                category = line;line = in.readLine();
+                newCategory = line;
+
                 line = in.readLine();
                 tempMap.put("nominee", line);
+
                 line = in.readLine();
                 tempMap.put("review", line);
 
@@ -112,8 +118,8 @@ public class ViewActivity extends AppCompatActivity
         @Override
         public void onItemSelected(AdapterView<?> spinner, View view, int position, long id)
         {
-            category = spinner.getResources().getStringArray(R.array.category_values)[position];
-            populateArrays();
+            String newCategory = spinner.getResources().getStringArray(R.array.category_values)[position];
+            displayReviews(newCategory);
         }
 
         @Override
