@@ -78,9 +78,6 @@ public class MainActivity extends AppCompatActivity implements OnClickListener, 
     @Override
     public void onClick(View view)
     {
-        //get radio group info
-        RadioGroup radioCategoryGroup = findViewById(R.id.radio_group_categories);
-
         //get nominee contents
         EditText textBoxNominee = findViewById(R.id.edit_text_nominee);
         String nominee = textBoxNominee.getText().toString();
@@ -90,7 +87,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener, 
         String review = textBoxReview.getText().toString();
 
         //get category
-        RadioGroup group = (RadioGroup)findViewById(R.id.radio_group_categories); //get the radio group
+        RadioGroup group = findViewById(R.id.radio_group_categories); //get radio group info
         int buttonID = group.getCheckedRadioButtonId(); //get the button id
         RadioButton button = (RadioButton)findViewById(buttonID); //get the correct button
         String category = (String) button.getTag(); //get the tag from that button
@@ -152,7 +149,8 @@ public class MainActivity extends AppCompatActivity implements OnClickListener, 
             case R.id.menu_item_preferences:
             {
                 //go to preferences
-
+                Intent intent = new Intent(this, PreferencesActivity.class);
+                startActivity(intent);
                 break;
             }
             case R.id.menu_item_view_review:
@@ -164,6 +162,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener, 
             }
             default:
             {
+                //if the code is reached i messed up really badly
                 break;
             }
         }

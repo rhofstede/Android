@@ -26,14 +26,14 @@ public class ViewActivity extends AppCompatActivity
 {
     //variables for use
     ArrayList<HashMap<String,String>> reviewArray = new ArrayList<HashMap<String,String>>();
-    String category = "film";
+    String category = "";
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view);
 
-        //get user's category
+        //initialise spinner
         Spinner categorySpinner = findViewById(R.id.spinner_choose_category);
         categorySpinner.setOnItemSelectedListener(new MySpinnerListener());
 
