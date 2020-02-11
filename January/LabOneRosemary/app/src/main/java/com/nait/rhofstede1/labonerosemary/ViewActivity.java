@@ -2,6 +2,7 @@ package com.nait.rhofstede1.labonerosemary;
 
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -24,6 +25,7 @@ import java.util.HashMap;
 
 public class ViewActivity extends AppCompatActivity
 {
+    public static final String TAG = "ViewActivity";
     //variables for use
     ArrayList<HashMap<String,String>> reviewArray = new ArrayList<HashMap<String,String>>();
     String category = "";
@@ -81,6 +83,7 @@ public class ViewActivity extends AppCompatActivity
             String line = "";
 
             String date = "";
+            String category = "";
 
             while((line = in.readLine()) != null)
             {
@@ -93,7 +96,8 @@ public class ViewActivity extends AppCompatActivity
                 tempMap.put("reviewer", line);
 
                 line = in.readLine();
-                newCategory = line;
+                category = line;
+                Log.d(TAG, category);
 
                 line = in.readLine();
                 tempMap.put("nominee", line);
