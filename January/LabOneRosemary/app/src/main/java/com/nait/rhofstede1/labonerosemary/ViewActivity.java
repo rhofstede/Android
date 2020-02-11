@@ -1,14 +1,17 @@
 package com.nait.rhofstede1.labonerosemary;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
+import android.view.View.OnClickListener;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -23,7 +26,7 @@ import java.net.URI;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class ViewActivity extends AppCompatActivity
+public class ViewActivity extends AppCompatActivity implements OnClickListener
 {
     public static final String TAG = "ViewActivity";
     //variables for use
@@ -39,8 +42,10 @@ public class ViewActivity extends AppCompatActivity
         Spinner categorySpinner = findViewById(R.id.spinner_choose_category);
         categorySpinner.setOnItemSelectedListener(new MySpinnerListener());
 
-        //display according to category
-        //displayReviews(category);
+        //create button
+        Button backButton = findViewById(R.id.button_back);
+        //listen for button
+        backButton.setOnClickListener(this);
     }
 
     private void displayReviews(String category)
@@ -116,6 +121,14 @@ public class ViewActivity extends AppCompatActivity
         }
     }
 
+    @Override
+    public void onClick(View view)
+    {
+        //go back to the main class
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
     class MySpinnerListener implements AdapterView.OnItemSelectedListener
     {
 
@@ -127,7 +140,8 @@ public class ViewActivity extends AppCompatActivity
         }
 
         @Override
-        public void onNothingSelected(AdapterView<?> parent) {
+        public void onNothingSelected(AdapterView<?> parent)
+        {
             //do nothing
         }
     }

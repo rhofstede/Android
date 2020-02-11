@@ -26,4 +26,16 @@
         android:divider="@color/colour_main_bg"
         android:background="@color/color_edit_text_bg"
         android:layout_below="@id/text_view_review_title"/>
+    <Button
+        android:id="@+id/button_back"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="Back"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/color_text_dark"
+        android:textColor="@color/color_text_light"/>
 </RelativeLayout>
