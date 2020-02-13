@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
-    <color name="text_view_bg_color">#cecece</color>
-    <color name="text_view_text_color">#232323</color>
-    <color name="spinner_row_bg_color">#493ed5</color>
-</resources>

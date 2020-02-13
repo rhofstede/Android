@@ -73,6 +73,7 @@ public class ViewActivity extends AppCompatActivity implements OnClickListener
 
         try
         {
+            reviewArray.clear();
             //import gradle scripts, build gradle (module app), and add useLibrary 'org.apache.http.legacy'
             //this is deprecated code. use the proper libraries when building
             HttpClient client = new DefaultHttpClient();
